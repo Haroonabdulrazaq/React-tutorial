@@ -10,17 +10,55 @@
 <body>
   <div id="app"></div>
   <script type="text/babel">
+  class Pet extends React.Component{
+    render(){
+     let hobbies = ["Sleeping", "Eating", "Cudling"]
+     let style ={
+       height:"auto",
+       backgroundColor:"grey",
+       width:"200px",
+       border:"2px solid blue",
+       display:"flex",
+       flexDirection:"column",
+       justifyContent:"center",
+       alignItems:"center",
+       borderRadius:"5px",
+    }
+    let imageSize = {
+      width:"190px",
+      height:"auto"
+    }
+      return (
+        <div style={style}>
+          <h2>Moxie</h2>
+          <img src="https://github.com/tigarcia/Moxie/raw/master/moxie.png" alt="Moxie my Cat" style={imageSize}/>
+          <h5 style={{
+            textAlign:"center",
+
+          }}>Hobbies</h5>
+          {hobbies.map((hobby, i) => {
+            return <li key={i} style={{
+            textAlign:"center",
+
+          }}> {hobby} </li>
+          })}
+        </div>
+      )
+    }
+  }
+
+
     class RandomBox extends React.Component {
       render(){
         let fontSize = Math.floor(Math.random()* 80) + 20
         let backgroundColor = ['red','green', 'blue', 'black'][Math.floor(Math.random()* 3)]
         return (
             <div style={{
-              fontSize,
+              fontSize: `{fontSize}px`,
               backgroundColor,
               height: "100px",
               width: "50%",
-              color: "15px",
+              color: 'white',
               textAlign: "center",
               marginTop:"5px"
             }}>
@@ -31,7 +69,7 @@
       
     }
 
-    ReactDOM.render(<RandomBox/>, document.getElementById("app"))
+    ReactDOM.render(<Pet/>, document.getElementById("app"))
 
   </script>
 </body>
