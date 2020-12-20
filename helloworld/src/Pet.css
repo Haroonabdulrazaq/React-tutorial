@@ -1,0 +1,16 @@
+.card{
+  height:auto;
+  background-color:grey;
+  width: 350px;
+  border:2px solid blue;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  border-radius:5px;
+  margin-left:250px;
+}
+ .imageSize {
+ width: 250px;
+ height: auto;
+}
