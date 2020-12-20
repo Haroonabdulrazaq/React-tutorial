@@ -10,9 +10,28 @@
 <body>
   <div id="app"></div>
   <script type="text/babel">
+  class HobbyList extends React.Component{
+    render(){
+      let hobbies = ["Sleeping", "Eating", "Cudling"]
+      return (
+        <div>
+          <h5 style={{
+            textAlign:"center",
+            fontSize:"15px"
+          }}>Hobby</h5>
+          <ul>
+            {
+              hobbies.map((hobby,i)=> <li key={i}style={{
+            textAlign:"center"
+          }}> {hobby}</li>)
+              }
+          </ul>
+        </div>
+      )
+    }
+  }
   class Pet extends React.Component{
     render(){
-     let hobbies = ["Sleeping", "Eating", "Cudling"]
      let style ={
        height:"auto",
        backgroundColor:"grey",
@@ -32,16 +51,7 @@
         <div style={style}>
           <h2>Moxie</h2>
           <img src="https://github.com/tigarcia/Moxie/raw/master/moxie.png" alt="Moxie my Cat" style={imageSize}/>
-          <h5 style={{
-            textAlign:"center",
-
-          }}>Hobbies</h5>
-          {hobbies.map((hobby, i) => {
-            return <li key={i} style={{
-            textAlign:"center",
-
-          }}> {hobby} </li>
-          })}
+          <HobbyList/>
         </div>
       )
     }
