@@ -10,54 +10,6 @@
 <body>
   <div id="app"></div>
   <script type="text/babel">
-  class HobbyList extends React.Component{
-    render(){
-      let hobbies = ["Sleeping", "Eating", "Cudling"]
-      return (
-        <div>
-          <h5 style={{
-            textAlign:"center",
-            fontSize:"15px"
-          }}>Hobby</h5>
-          <ul>
-            {
-              hobbies.map((hobby,i)=> <li key={i}style={{
-            textAlign:"center"
-          }}> {hobby}</li>)
-              }
-          </ul>
-        </div>
-      )
-    }
-  }
-  class Pet extends React.Component{
-    render(){
-     let style ={
-       height:"auto",
-       backgroundColor:"grey",
-       width:"200px",
-       border:"2px solid blue",
-       display:"flex",
-       flexDirection:"column",
-       justifyContent:"center",
-       alignItems:"center",
-       borderRadius:"5px",
-    }
-    let imageSize = {
-      width:"190px",
-      height:"auto"
-    }
-      return (
-        <div style={style}>
-          <h2>Moxie</h2>
-          <img src="https://github.com/tigarcia/Moxie/raw/master/moxie.png" alt="Moxie my Cat" style={imageSize}/>
-          <HobbyList/>
-        </div>
-      )
-    }
-  }
-
-
     class RandomBox extends React.Component {
       render(){
         let fontSize = Math.floor(Math.random()* 80) + 20

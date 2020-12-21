@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import "./Pet.css";
-import HobbyList from "./hobby";
+import HobbyList from "./HobbyList";
 
  
 
