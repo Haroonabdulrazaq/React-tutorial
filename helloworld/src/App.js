@@ -1,11 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
-import Pet from "./Pet"
+import Recipe from "./Recipe"
+// import Pet from "./Pet"
 
 function App() {
   return (
     <div className="App">
-      <Pet/>
+      <Recipe />
     </div>
   );
 }
