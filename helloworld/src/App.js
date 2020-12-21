@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import './App.css';
-import Recipe from "./Recipe"
-// import Pet from "./Pet"
+import Recipe from "./Recipe";
+import Navbar from "./Navbar";
 
 class App extends Component {
  
   render(){
     return (
-      // <div className="App">
+      
+        <div className="App">
+          <Navbar />
         <div className="recipe-wrapper">
           <Recipe title="Pasta" ingredients = {["flour", "water"]} 
                 img="spagehtti.jpeg" instructions="Boil for five minutes untill is soft serve an walla!"/>
@@ -16,7 +18,7 @@ class App extends Component {
           <Recipe title="Avocado Toast" ingredients = {["Salt", "water", "Oil"]} 
                 img="Avocado.jpeg" instructions="Spread Avocado bread, add salt, peper and oil to taste"/>
         </div>
-      // </div>
+        </div>
     );
   }
   
