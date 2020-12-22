@@ -2,15 +2,17 @@ import React , {Component} from "react";
 import "./Navbar.css";
 
 class Navbar extends Component {
+  static defaultProps = {
+    nav: ["New Recipe","Home","About","Contact us"]
+  }
+ 
   render(){
+    let navigations = this.props.nav.map((ele, index)=><li key={index} className="nav-item"> {ele} </li>)
     return(
       <div className="navigation">
         <div className="navbar-brand">RecipeApp</div>
         <ul className="nav-list">
-          <li className="nav-item">New Recipe</li>
-          <li className="nav-item">Home</li>
-          <li className="nav-item">About</li>
-          <li className="nav-item">Contact us</li>
+          {navigations}
         </ul>
       </div>
     )

@@ -28,10 +28,10 @@ class RecipeList extends Component {
   }
 
   static propTypes = {
-    recipe: PropTypes.arrayOf(PropTypes.object)
+    recipe: PropTypes.arrayOf(PropTypes.object).isRequired
   }
   render(){
-    let recipes = this.props.recipe.map((r, index)=><Recipe key ={index} {...r}/> )
+    let recipes = this.props.recipe.map((r, index)=> <Recipe key ={index} {...r}/> )
     
     return (
       <div className="recipe-wrapper" >

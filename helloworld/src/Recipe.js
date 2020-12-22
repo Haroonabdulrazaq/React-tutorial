@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 class Recipe extends Component {
   static propTypes = {
     title: PropTypes.string.isRequired,
-    ingredient: PropTypes.arrayOf(PropTypes.string).isRequired,
+    ingredients: PropTypes.arrayOf(PropTypes.string).isRequired,
     img: PropTypes.string.isRequired,
     instructions: PropTypes.string.isRequired
   }
