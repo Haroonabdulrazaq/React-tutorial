@@ -1,9 +1,13 @@
 import React , {Component} from "react";
 import "./Navbar.css";
+import PropTypes from "prop-types"
 
 class Navbar extends Component {
   static defaultProps = {
     nav: ["New Recipe","Home","About","Contact us"]
+  }
+  static propTypes = {
+    nav: PropTypes.arrayOf(PropTypes.string).isRequired
   }
  
   render(){
