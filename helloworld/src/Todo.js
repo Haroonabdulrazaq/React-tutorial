@@ -30,22 +30,14 @@ class Todo extends Component{
     
   }
 
-  // listHandler(){
-  //   let lists = []
-  //   lists.push(this.state.submit)
-  //   console.log(lists)
-  //   lists = lists.map((list, index)=>(
-  //     <li key={index}>{list}</li>
-  //   ))
-  // }
 
   render(){    
     let todo = this.state.lists.map((list, index)=>(
       <li key={index}>{list}</li>
     ))
     return(
-      <div className="todo-wrapper">
-          <form onSubmit={this.handleSubmit}>
+      <div className="todo-wrapper" >
+          <form onSubmit={this.handleSubmit} >
             <input type="text" 
             value={this.state.input} 
             onChange={this.handleChange}
