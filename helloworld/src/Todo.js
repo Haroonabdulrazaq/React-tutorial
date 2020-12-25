@@ -45,11 +45,9 @@ class Todo extends Component{
 
             <input type="submit" value="Add"  />
           </form>
-           
             <ol>
               {todo}
             </ol>
-             
       </div>
     )
   }
