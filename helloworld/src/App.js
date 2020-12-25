@@ -1,20 +1,19 @@
 import React, { Component } from 'react';
 import './App.css';
-import RecipeList from "./RecipeList";
-import Navbar from "./Navbar";
-import Instructor from './Instructor';
+import Todo from "./Todo";
 
-class App extends Component {
- 
-  render(){
-    return (
-      
-        <div className="App">
-          <Instructor />
-        </div>
-    );
+class App extends Component{
+  constructor(props){
+    super(props);
   }
-  
+
+  render(){
+    return(
+      <div className="App">
+        <Todo/>
+      </div>
+    )
+  }
 }
 
 export default App;

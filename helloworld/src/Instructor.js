@@ -42,7 +42,6 @@ class Instructor extends Component {
   
   
     }, 2000);
-
   };
 
 
