@@ -31,8 +31,11 @@ class App extends Component{
         instructions: "Spread Avocado bread, add salt, peper and oil to taste"
       }],
       nextRecipeId: 3,
+      showForm: false,
     }
     this.handleSave =  this.handleSave.bind(this)
+    this.toggleForm =  this.toggleForm.bind(this)
+    this.handleClose =  this.handleClose.bind(this)
   }
   
   handleSave(recipe){
@@ -45,11 +48,27 @@ class App extends Component{
     })
   }
 
+  toggleForm(){
+    this.setState((state)=>{
+     return { showForm: !state.showForm }
+    })
+  }
+  handleClose(){
+    this.setState({
+      showForm: false 
+    })
+  }
+
   render(){
+    const {showForm } = this.state
     return(
       <div className="App">
-        <Navbar />
-        <RecipeInput onSave={this.handleSave}/>
+        <Navbar onToggle = {this.toggleForm}/>
+        {showForm? 
+              <RecipeInput 
+                    onSave={this.handleSave}
+                    onClose={this.handleClose}/>: 
+              null}
         <RecipeList recipes = {this.state.recipes}/>
       </div>
     )

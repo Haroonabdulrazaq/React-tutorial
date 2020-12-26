@@ -3,7 +3,6 @@ import './RecipeInput.css';
 
 class RecipeInput extends Component{
   static defaultProps = {
-    onClose(){},
     onSave(){}
   }
 constructor(props){
@@ -51,7 +50,6 @@ constructor(props){
 
 render(){
  
-  const onClose = this.props
   const {title, instructions, ingredients, img} = this.state;
   let inputs =  ingredients.map((ing, i )=>(
     <div
@@ -75,7 +73,7 @@ render(){
         <button
         type="button"
         className="close-button"
-        onClick={onClose}> X
+        onClick={this.props.onClose}> X
         </button>
         <div className="recipe-form-line">
           <label htmlFor='recipe-title-input'>Title</label>
