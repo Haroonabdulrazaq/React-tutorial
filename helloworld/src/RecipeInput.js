@@ -2,31 +2,69 @@ import React, {Component} from 'react';
 import './RecipeInput.css'; 
 
 class RecipeInput extends Component{
+  static defaultProps = {
+    onClose(){},
+    onSave(){}
+  }
 constructor(props){
   super(props);
+
   this.state = {
     title: '',
     instructions:"",
     ingredients:[''],
     img:""
   }
+  this.handleChange =this.handleChange.bind(this)
+  this.handleNewIngredient =this.handleNewIngredient.bind(this)
+  this.handleChangeIng =this.handleChangeIng.bind(this)
+  this.handleSubmit =this.handleSubmit.bind(this)
 }
 
+  handleChange(e){
+    this.setState({
+      [e.target.name]: e.target.value
+    })
+  }
+  handleNewIngredient(e){
+   const {ingredients} = this.state
+   this.setState({ingredients: [...ingredients, '']})
+  }
+  handleChangeIng(e){
+    const index = Number(e.target.name.split('-')[1]);
+    let ingredients  = this.state.ingredients.map((ing, i )=>(
+      i === index? e.target.value :ing
+    ))
+    this.setState({ingredients})
+  }
+
+  handleSubmit(e){
+    e.preventDefault()
+    this.props.onSave({...this.state})
+    this.setState({
+      title: '',
+      instructions:"",
+      ingredients:[''],
+      img:""
+    })
+  }
+
 render(){
+ 
   const onClose = this.props
   const {title, instructions, ingredients, img} = this.state;
-  ingredients = this.state.ingredients.map((ing, i )=>(
+  let inputs =  ingredients.map((ing, i )=>(
     <div
     className="reicpe-form-line"
     key={`ingredient-${i}`}>
-      <label>
+      <label> {i + 1}.
         <input type="text"
         name={`ingredient-${i}`}
         value={ing}
         size={45}
         autocomplete="off"
         placeholder="Add new Ingredients"
-        onChange={this.onChange}
+        onChange={this.handleChangeIng}
         />
       </label>
     </div>

@@ -1,5 +1,5 @@
 .recipe-wrapper {
-  margin-top: 2em;
+  margin : 2em 0;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
