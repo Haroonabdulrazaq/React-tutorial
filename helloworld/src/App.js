@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import './App.css';
-import RecipeApp from './RecipeApp';
+import './App.css'; 
+import HackerNews from './HackerNews';
+// import RecipeApp from './RecipeApp';
  
 
 class App extends Component{
@@ -8,7 +9,7 @@ class App extends Component{
  
     return(
       <div className="App">
-        <RecipeApp />
+        <HackerNews />
       </div>
     )
   }

@@ -36,6 +36,7 @@ class App extends Component{
     this.handleSave =  this.handleSave.bind(this)
     this.toggleForm =  this.toggleForm.bind(this)
     this.handleClose =  this.handleClose.bind(this)
+    this.onDelete =  this.onDelete.bind(this)
   }
   
   handleSave(recipe){
@@ -59,9 +60,14 @@ class App extends Component{
       showForm: false 
     })
   }
+  onDelete(id){
+    let recipes = this.state.recipes.filter((ele)=> ele.id !== id);
+    this.setState({recipes})
+  } 
 
   render(){
     const {showForm } = this.state
+ 
     return(
       <div className="App">
         <Navbar onToggle = {this.toggleForm}/>
@@ -70,7 +76,7 @@ class App extends Component{
                     onSave={this.handleSave}
                     onClose={this.handleClose}/>: 
               null}
-        <RecipeList recipes = {this.state.recipes}/>
+        <RecipeList recipes = {this.state.recipes} onDelete={this.onDelete}/>
       </div>
     )
   }

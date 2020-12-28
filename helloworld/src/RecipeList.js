@@ -12,7 +12,7 @@ class RecipeList extends Component {
     recipes: PropTypes.arrayOf(PropTypes.object).isRequired
   }
   render(){
-    let recipes = this.props.recipes.map((r)=> <Recipe key ={r.id} {...r}/> )
+    let recipes = this.props.recipes.map((r)=> <Recipe key ={r.id} {...r} onDelete ={this.props.onDelete}/> )
     
     return (
       <div className="recipe-wrapper" >
