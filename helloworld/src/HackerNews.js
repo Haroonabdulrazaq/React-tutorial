@@ -26,7 +26,7 @@ class HackerNews extends Component {
     if(stories && stories.length > 0){
       views = stories.map(story => (
         <p key={story.id}> 
-        <a href={story.url}>{story.title}</a>by<strong>{story.by}</strong>
+        <a href={story.url}>{story.title}</a> by<strong> {story.by}</strong>
         </p>
       ))
     }
