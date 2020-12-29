@@ -1,22 +1,29 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {Switch, Route} from 'react-router-dom';
 
-
-
-const Home =()=>(
-  <div>Home Page</div>
-);
-
-const About =()=>(
-  <div>About Page</div>
-);
-
-
-const SwitchDemo = ()=> {
-return (<Switch>
-  <Route exact path= "/" component={Home}/>
-  <Route exact path= "/about" component={About}/>
-</Switch>)
+function Home() {
+  return (
+    <div>
+      Welcome to React Router
+    </div>
+  )
+}
+ function About() {
+  return (
+    <div>
+      Right now in the About Page
+    </div>
+  )
 }
 
-export default SwitchDemo
+ function SwitchDemo() {
+  return (
+    <div>
+      <Switch>
+        <Route exact path="/" component ={Home}/>
+        <Route exact path="/about" component ={About}/> 
+      </Switch>
+    </div>
+  )
+}
+export default SwitchDemo;

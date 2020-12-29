@@ -1,24 +1,30 @@
 import React, { Component } from 'react';
-import './App.css'; 
+// import { NavLink } from 'react-router-dom/cjs/react-router-dom.min';
+import './App.css';
 import SwitchDemo from './SwitchDemo';
-import {NavLink} from 'react-router-dom';
+import {NavLink} from 'react-router-dom'
 
  
 
 class App extends Component{
   render(){
-    const active ={textDecoration:'none', cursor:'default', color:'green'};
-    const defaultStyle = { margin:"5px" }
-    return(
+    let defaultStyle = {
+      margin:"25px",
+      fontSize:"15px",
+      marginBottom:"50px"
+    }
+    let active = {
+      color:"green",
+      textDecoration:"none",
+    }
+    return (
       <div className="App">
-        <NavLink exact style={defaultStyle} activeStyle= {active} to="/" > Home</NavLink>
-        <NavLink exact style={defaultStyle} activeStyle= {active} to="/about">About </NavLink>
-        <div style={{fontSize:"3em", margin:"25px"}}>
-
-          <SwitchDemo />
-        </div>
+        <NavLink exact to="/" style={defaultStyle} activeStyle={active}> Home </NavLink>
+        <NavLink exact to="/about" style={defaultStyle} activeStyle={active}> About </NavLink>
+        < SwitchDemo />
       </div>
     )
+   
   }
 }
 
